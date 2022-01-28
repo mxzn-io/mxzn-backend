@@ -12,7 +12,8 @@ const ProductRoute = require('./routes/product');
 
 // database
 mongoose.connect(process.env.MONGO_URL ,() => {
-    console.log('mongodb connected.')
+    console.log('mongodb connected.');
+    // express
     const app = express();
     app.use(express.json());
 
@@ -20,7 +21,7 @@ mongoose.connect(process.env.MONGO_URL ,() => {
     app.use('/api/product', ProductRoute);
 
     // server
-    app.listen(8000, '0.0.0.0', () => {
+    app.listen(8001, '0.0.0.0', () => {
         console.log('server is running')
     })
 }, error => {

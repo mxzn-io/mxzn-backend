@@ -33,26 +33,29 @@ const genUsername = () => {
 
 const login = (req, res) => {
     console.log('user login');
-    const ip = getIp(req);
-    const username = genUsername();
-    const { email } = req.body;
-    const user = { username, email };
-    const accessToken = genToken(user, ip, 'access');
-    const refreshToken = genToken(user, ip, 'refresh');
-
-    // 允许同一个用户同时在多地登录
-    if(!tokens[email]){
-        tokens[email] = {}
-    }
-
-    if(!tokens[email]['ip']){
-        tokens[email]['ip'] = {}
-    }
-
-    tokens[email]['username'] = username;
-    tokens[email]['ip'][ip] = {accessToken, refreshToken}
-
-    res.json({accessToken: accessToken, refreshToken: refreshToken})
+    res.json({
+        status: 'ok'
+    })
+    // const ip = getIp(req);
+    // const username = genUsername();
+    // const { email } = req.body;
+    // const user = { username, email };
+    // const accessToken = genToken(user, ip, 'access');
+    // const refreshToken = genToken(user, ip, 'refresh');
+    //
+    // // 允许同一个用户同时在多地登录
+    // if(!tokens[email]){
+    //     tokens[email] = {}
+    // }
+    //
+    // if(!tokens[email]['ip']){
+    //     tokens[email]['ip'] = {}
+    // }
+    //
+    // tokens[email]['username'] = username;
+    // tokens[email]['ip'][ip] = {accessToken, refreshToken}
+    //
+    // res.json({accessToken: accessToken, refreshToken: refreshToken})
 }
 
 const logout = (req, res) => {
@@ -90,7 +93,7 @@ const token = (req, res) => {
 }
 
 const userInfo = (req, res) => {
-    res.json('userinfo')
+    res.json({status: 'ok', data: {name: 'alei'}})
 }
 
 const updateUser = (req, res) => {
