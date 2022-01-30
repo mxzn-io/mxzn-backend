@@ -8,11 +8,11 @@ const genToken = (user, type) => {
   switch (type) {
     case "access":
       return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-        expiresIn: "40s",
+        expiresIn: "10m",
       });
     case "refresh":
       return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {
-        expiresIn: "30m",
+        expiresIn: "7d",
       });
     default:
       return "";

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/mxzn-backend.iml" filepath="$PROJECT_DIR$/.idea/mxzn-backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../mxzn-frontend/.idea/mxzn-frontend.iml" filepath="$PROJECT_DIR$/../mxzn-frontend/.idea/mxzn-frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/../mxzn-frontend.wiki/.idea/mxzn-frontend.wiki.iml" filepath="$PROJECT_DIR$/../mxzn-frontend.wiki/.idea/mxzn-frontend.wiki.iml" />
     </modules>
   </component>
